@@ -1,0 +1,49 @@
+yum install nfs-utils
+    3  mkdir /mnt/manish
+    4  chown nobody:nobody /mnt/manish
+    5  chmod 777 /mnt/manish
+    6  vim /etc/exports
+    7  exportfs -r
+    8  systemctl restart nfs-server.service
+    9  systemctl enable nfs-server.service
+   10  mkdir /mohit
+   11  ip a
+   12  mount 172.17.0.12:/mnt/manish /mohit
+   13  df -h
+   14  umount /mohit
+   15  df -h
+   16  oc create sa
+   17  oc create sa mysa
+   18  oc adm policy add-scc-to-user anyuid -z mysa
+   19  oc new-app --docker-image=mysql:5.6 --env MYSQL_ROOT_PASSWORD=redhat --env MYSQL_DATABASE=mydata
+   20  oc edit dc mysql
+   21  oc get pod
+   22  oc get pod -w -o wide
+   23  git clone https://github.com/manishumeshbhamre/openshift_stuff.git
+   24  ls
+   25  cd opqn
+   26  cd openshift_stuff/
+   27  ls
+   28  cd pv-pvc/
+   29  ls
+   30  vi pvc.yml
+   31  vi pv.yml
+   32  ip a
+   33  vi pv.yml
+   34  oc create -f pv.yml
+   35  oc create -f pvc.yml
+   36  ls /mnt/manish
+   37  oc get pods
+   38  df -h
+   39  history
+   40  vi pv.yml
+   41  vi pvc.yml
+   42  oc edit dc mysql
+   43  oc get pvc
+   44  cd /mnt/manish
+   45  ls
+   46  oc new-app --docker-image=wordpress -e DB_HOST=mysql DB_PASSWORD=redhat
+   47  oc get svc
+   48  oc expose svc wordpress
+   49  oc get pod
+   50  history
